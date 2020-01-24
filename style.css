@@ -1,0 +1,333 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: var(--font);
+    font-weight: bold;
+
+    /* Variables */
+    --font:"Lato", sans-serif;
+}
+
+.site-wrapper {
+    width: 100%;
+    height: auto;
+    background-color: rgba(35, 34, 34, 0.99);
+
+}
+
+.nav-bar {
+    height: 125px;
+    width: 100%;
+    background-color: rgba(35, 34, 34, 0.99);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    height: 80px; 
+    width: 80px;
+}
+
+svg path {
+    fill: white;
+}
+
+.menu-link {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 200ms ease-in;
+}
+
+.logo-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-left: 25px;
+}
+
+.menu-link:hover {
+    color: #f1b53f;
+}
+
+.nav-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.nav-mobile-menu {
+    display: none;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.order {
+    padding: 10px 10px;
+    border: 2px solid #f1b53f;
+    color: #f1b53f;
+    transition: color 200ms ease-in, background-color 200ms ease-in;
+}
+
+.order:hover {
+    background-color: #f1b53f;
+    color: black;
+}
+
+.intro {
+    width: auto;
+    height: 100vh;
+    background-image: url("images/pizza.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    
+}
+
+.intro-quote {
+    position: absolute;
+    width: 25%;
+    top: 35%;
+    left: 55%;
+    opacity: 0;
+    transform: translate(50%, 50%);
+    color: #f1b53f;
+    font-size: 2rem;
+    transition: top 700ms ease-in, opacity 700ms ease-in;
+}
+
+.intro-quote-show {
+    top: 25%;
+    opacity: 1;
+}
+
+.highlights {
+    width: auto;
+    min-height: auto;
+    background-color: rgb(27, 27, 27);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-rows: repeat(auto-fill, 300px);
+    grid-auto-rows: 300px;
+    gap: 80px 80px;
+    padding: 100px 10%;
+    align-content: center;
+    justify-content: center;
+}
+
+.pizza-container {
+    display: grid;
+    grid-template-rows: 70% 30%;
+    transition: transform 200ms ease-in;
+    cursor: pointer;
+}
+
+.pizza-container:hover {
+    transform: scale(1.02, 1.02);
+}
+
+.pizza-presentation {
+    color: #f1b53f;
+    text-align: center;
+    background-image: url("./images/margherita.jpg");
+    background-size: 100%;
+    position: relative;
+}
+
+.pizza-title {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.pizza-ingredients {
+    color: white;
+    font-weight: normal;
+    text-align: inherit;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pizza-price {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.footer {
+    height: 100px;
+    background-color: rgba(35, 34, 34, 0.99);
+    display: flex;
+    color: white;
+    font-weight: normal;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 1100px) {
+    .intro {
+        background-position: right;
+        background-position-x: 75%;
+    }
+
+    .intro-quote {
+        width: 45%;
+        left: 35%;
+        top: 50%;
+    }
+
+    .intro-quote-show {
+        top: 30%;
+    }
+
+    .menu-link {
+        font-size: 1.2rem;
+        margin: 0 5px;
+    }
+
+    .highlights {
+        padding: 100px 0;
+    }
+}
+
+@media (max-width: 780px) {
+    .nav-inner {
+        padding: 0 25px;
+    }
+    
+    .menu-link {
+        font-size: 0.8rem;
+        margin: 0px 2px;
+    }
+
+    .intro-quote-show {
+        top: 15%;
+    }
+
+    .intro-quote {
+        left: 30%;
+    }
+
+
+}
+
+@media (max-width:750px) {
+    .nav-bar {
+        height: 100px;
+
+    }
+
+    svg {
+        height: 50px;
+        width: 50px;
+    }
+
+    .nav-inner {
+        padding: 0 5px;
+        justify-content: space-around;
+    }
+    
+    .menu-link {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+
+    .highlights {
+        grid-template-columns: repeat(1, 300px);
+        padding: 100px 0;
+    }
+
+    .intro {
+        background-position: center;
+    }
+
+    .intro-quote {
+        display: none;;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-mobile-menu {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: -50%;
+        opacity: 0;
+        background-color: #232222;
+        padding: 10px;
+        transition: right 200ms ease-in, opacity 200ms ease-in;
+    }
+
+    .logo-link {
+        margin-left: 5px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .line {
+        width: 80%;
+        height: 3px;
+        background-color: white;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .l1 {
+        top: 35%;
+    }
+
+    .l2 {
+        top: 50%;
+    }
+
+    .l3 {
+        top: 65%;
+    }
+
+    .showing {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@media (max-height: 720px) {
+    .intro-quote {
+        left: 60%;
+        font-size: 1.25rem;
+    }
+}
+
+
